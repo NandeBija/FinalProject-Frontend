@@ -2,6 +2,9 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home";
 import Services from "../views/Services";
 import Photographers from "../views/Photographers";
+import Register from "../views/Register";
+import Login from "../views/Login";
+import PasswordReset from "../views/PasswordReset";
 
 const routes = [
   {
@@ -27,6 +30,21 @@ const routes = [
     path: "/photographers",
     name: "Photographers",
     component: Photographers,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+  },
+  {
+    path: "/reset",
+    name: "PasswordReset",
+    component: PasswordReset,
   },
 ];
 

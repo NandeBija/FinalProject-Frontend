@@ -1,98 +1,63 @@
 <template>
-  <!-- <div class="topnav" id="myTopnav">
-    <a href="#home" class="active"
-      ><router-link to="/">Home</router-link>
-      <i class="fa fa-home" aria-hidden="true"></i
-    ></a>
-    <a href="#"
-      ><router-link to="/about">About <i class="fa fa-user"></i></router-link
-    ></a>
-    <a href="#resume">Services <i class="fa fa-cogs"></i></a>
-    <a href="#projects">Photographers <i class="fa fa-camera"></i></a>
-    <a href="#testimonil">Testimonials <i class="fa fa-commenting-o"></i></a>
-    <a href="#cont2">Contact <i class="fa fa-envelope"></i></a>
-    <a href="javascript:void(0);" class="icon" @click="myFunction">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div> -->
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Container wrapper -->
-    <div class="container">
-      <!-- Navbar brand -->
+    <div class="container-fluid">
       <a class="navbar-brand me-2"
         ><router-link to="/">
           <img
             src="https://i.postimg.cc/sf6RDzVS/snap-away.png"
-            height="90"
+            height="70"
             width="180"
             alt="Logo"
             loading="lazy"
             style="margin-top: -1px"
         /></router-link>
       </a>
-
-      <!-- Toggle button -->
       <button
         class="navbar-toggler"
         type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarButtonsExample"
-        aria-controls="navbarButtonsExample"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i class="fas fa-bars"></i>
+        <span class="navbar-toggler-icon"></span>
       </button>
-
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarButtonsExample">
-        <!-- Left links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link"
-              ><router-link to="/">Home<i class="fa fa-home"></i></router-link
-            ></a>
+            <a class="nav-link"><router-link to="/">Home</router-link></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><router-link to="/about">About</router-link></a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
-              ><router-link to="/about"
-                >About<i class="fa fa-user"></i></router-link
-            ></a>
+              ><router-link to="/services">Services</router-link></a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link"
-              ><router-link to="/services"
-                >Services<i class="fa fa-cogs"></i></router-link
-            ></a>
+              ><router-link to="/photographers">Photographers</router-link></a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link"
-              ><router-link to="/photographers"
-                >Photographers<i class="fa fa-camera"></i></router-link
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"
-              ><router-link to="/photographers"
-                >Contact us<i class="fa fa-envelope"></i></router-link
-            ></a>
+              ><router-link to="/photographers">Contact us</router-link></a
+            >
           </li>
         </ul>
-        <!-- Left links -->
-
         <div class="d-flex align-items-center">
-          <button type="button" class="btn btn-link px-3 me-2">Login</button>
-          <button type="button" class="btn btn-secondary me-3">
-            Sign up now!
+          <button type="button" class="btn">
+            <router-link to="/login">Login</router-link>
+          </button>
+          <button type="button" class="btn">
+            <router-link to="/register">Sign up</router-link>
           </button>
         </div>
       </div>
-      <!-- Collapsible wrapper -->
     </div>
-    <!-- Container wrapper -->
   </nav>
-  <!-- Navbar -->
 </template>
 
 <script>
@@ -119,18 +84,27 @@ export default {
   top: 0;
   left: 0;
   z-index: 600;
-}
 
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 115px;
+  padding-right: 115px;
+}
+.navbar-nav {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 .nav-item a {
-  float: left;
+  font-weight: 0;
   display: block;
-  color: green;
+  color: rgb(37, 39, 37);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
-  font-family: courier new;
-  font-weight: bold;
+  /* font-family: courier new;
+  font-weight: bold; */
 }
 
 .nav-item a:hover {
@@ -142,9 +116,6 @@ export default {
   color: white;
 }
 
-.topnav .icon {
-  display: none;
-}
 .fa {
   position: relative;
   font-size: 22px;
@@ -156,9 +127,32 @@ export default {
 .fa {
   color: green;
 }
-.d-flex button {
+/* .d-flex button {
   border-radius: 20%;
-  
+} */
+.d-flex button:nth-child(1) {
+  display: inline-block;
+  border: none;
+  font-size: 16px;
+  font-weight: 660;
+  padding: 7px 26px;
+  text-align: center;
+  color: rgb(27, 27, 27);
+
+  width: 120px;
+  min-height: 45px;
+}
+.d-flex button:nth-child(2) {
+  display: inline-block;
+  border: none;
+  font-size: 16px;
+  padding: 7px 26px;
+  text-align: center;
+  color: white;
+  background: #dc3545;
+  border-radius: 40px;
+  width: 120px;
+  min-height: 45px;
 }
 
 /* MEDIA QUERIES */
