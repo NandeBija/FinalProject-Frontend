@@ -20,12 +20,23 @@
                   <form>
                     <p>Please login to your account</p>
 
-                    <div class="form-outline mb-4">
+                    <!-- <div class="form-outline mb-4">
                       <input
-                        type="email"
+                        type="name"
                         id="form2Example11"
                         class="form-control"
-                        placeholder="Phone number or email address"
+                        placeholder="Phone number name"
+                      />
+                      <label class="form-label" for="form2Example11"
+                        >Username</label
+                      >
+                    </div> -->
+                    <div class="form-outline mb-4">
+                      <input
+                        type="name"
+                        id="form2Example11"
+                        class="form-control"
+                        placeholder="Enter username"
                       />
                       <label class="form-label" for="form2Example11"
                         >Username</label
@@ -37,6 +48,7 @@
                         type="password"
                         id="form2Example22"
                         class="form-control"
+                        placeholder="Enter password"
                       />
                       <label class="form-label" for="form2Example22"
                         >Password</label
@@ -58,7 +70,7 @@
                     >
                       <p class="mb-0 me-2">Don't have an account?</p>
                       <button type="button" class="btn btn-outline-danger">
-                        Create new
+                        <router-link to="/register"> Create new </router-link>
                       </button>
                     </div>
                   </form>
