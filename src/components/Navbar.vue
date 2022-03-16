@@ -4,9 +4,9 @@
       <a class="navbar-brand me-2"
         ><router-link to="/">
           <img
-            src="https://i.postimg.cc/sf6RDzVS/snap-away.png"
-            height="70"
-            width="180"
+            src="../assets/SNAP.png"
+            height="80"
+            width="110"
             alt="Logo"
             loading="lazy"
             style="margin-top: -1px"
@@ -43,7 +43,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link"
-              ><router-link to="/photographers">Contact us</router-link></a
+              ><router-link to="/contact">Contact us</router-link></a
             >
           </li>
         </ul>

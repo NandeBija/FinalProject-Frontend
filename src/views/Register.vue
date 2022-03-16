@@ -57,19 +57,6 @@
                       </div>
                     </div>
 
-                    <div class="form-check d-flex justify-content-center mb-5">
-                      <input
-                        class="form-check-input me-2"
-                        type="checkbox"
-                        value=""
-                        id="form2Example3c"
-                      />
-                      <label class="form-check-label" for="form2Example3">
-                        I agree all statements in
-                        <a href="#!">Terms of service</a>
-                      </label>
-                    </div>
-
                     <div
                       class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
                     >
@@ -83,7 +70,7 @@
                   class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
                 >
                   <img
-                    src="https://i.pinimg.com/originals/17/f8/6f/17f86fe300c2689f071ef48bf4cae159.gif"
+                    src="../assets/SNAP.gif"
                     class="img-fluid"
                     alt="Sample image"
                   />

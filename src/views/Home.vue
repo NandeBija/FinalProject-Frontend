@@ -90,7 +90,7 @@ svg {
   left: 0;
 }
 .shape {
-  background-image: url("https://wallpaperaccess.com/full/6749532.jpg");
+  background-image: url("https://www.influencive.com/wp-content/uploads/2022/01/photography-studio-photo-shoot-stockpack-pixabay-scaled.jpg");
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
   background-position: center;

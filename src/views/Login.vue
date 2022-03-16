@@ -10,7 +10,7 @@
                 <div class="card-body p-md-5 mx-md-4">
                   <div class="text-center">
                     <img
-                      src="https://i.postimg.cc/YCC0RyRc/snapaway.png"
+                      src="../assets/SNAP.png"
                       style="width: 185px"
                       alt="logo"
                     />
@@ -69,7 +69,7 @@
                       class="d-flex align-items-center justify-content-center pb-4"
                     >
                       <p class="mb-0 me-2">Don't have an account?</p>
-                      <button type="button" class="btn btn-outline-danger">
+                      <button type="button" class="btn">
                         <router-link to="/register"> Create new </router-link>
                       </button>
                     </div>
@@ -78,7 +78,7 @@
               </div>
               <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                  <h4 class="mb-4">We are more than just a company</h4>
+                  <h4 class="mb-4">FROM PICTURES TO MOMENTS!</h4>
                   <p class="medium mb-0">
                     We help bridge the gap between you and your most cherished
                     memories by connecting you to professional photographers.
@@ -108,6 +108,9 @@ export default {};
   background-image: url("https://images.unsplash.com/photo-1552498756-8f642a26e50c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NXx8fGVufDB8fHx8&w=1000&q=80");
   background-size: cover;
   background-repeat: no-repeat;
+}
+.btn:nth-child(4){
+  color: grey;
 }
 
 @media (min-width: 768px) {

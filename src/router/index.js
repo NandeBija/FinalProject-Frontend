@@ -4,6 +4,7 @@ import Services from "../views/Services";
 import Photographers from "../views/Photographers";
 import Register from "../views/Register";
 import Login from "../views/Login";
+import Contact from "../views/Contact";
 import PasswordReset from "../views/PasswordReset";
 
 const routes = [
@@ -45,6 +46,11 @@ const routes = [
     path: "/reset",
     name: "PasswordReset",
     component: PasswordReset,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
   },
 ];
 
