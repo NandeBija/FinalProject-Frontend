@@ -1,5 +1,4 @@
 <template>
-  CSS
   <section class="h-100 gradient-form" style="background-color: #eee">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -62,7 +61,6 @@
                       >
                         Log in
                       </button>
-                      <a class="text-muted" href="#!">Forgot password?</a>
                     </div>
 
                     <div
@@ -109,7 +107,7 @@ export default {};
   background-size: cover;
   background-repeat: no-repeat;
 }
-.btn:nth-child(4){
+.btn:nth-child(4) {
   color: grey;
 }
 

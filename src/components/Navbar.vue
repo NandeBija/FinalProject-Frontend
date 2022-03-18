@@ -43,7 +43,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link"
-              ><router-link to="/contact">Contact us</router-link></a
+              ><router-link to="/contact">Contact</router-link></a
             >
           </li>
         </ul>
@@ -51,7 +51,7 @@
           <button type="button" class="btn">
             <router-link to="/login">Login</router-link>
           </button>
-          <button type="button" class="btn">
+          <button type="button" class="btn" id="btn">
             <router-link to="/register">Sign up</router-link>
           </button>
         </div>
@@ -95,6 +95,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 .nav-item a {
   font-weight: 0;
   display: block;
@@ -108,13 +109,18 @@ export default {
 }
 
 .nav-item a:hover {
-  color: greenyellow;
+  color: rgb(21, 101, 192);
 }
 
 .topnav a.active {
   background-color: greenyellow;
   color: white;
 }
+#btn:hover{
+  background-color: maroon;
+
+}
+
 
 .fa {
   position: relative;
@@ -124,9 +130,7 @@ export default {
   color: #0a0a0a;
   padding-top: 5px;
 }
-.fa {
-  color: green;
-}
+
 /* .d-flex button {
   border-radius: 20%;
 } */
@@ -175,6 +179,20 @@ export default {
     display: block;
     text-align: left;
   }
+  .navbar {
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 600;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 37px;
+}
   .topnav {
     overflow: hidden;
     background-color: #000000;

@@ -12,4 +12,9 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+a {
+  color: black;
+  text-decoration: none;
+}
+</style>

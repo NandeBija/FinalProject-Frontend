@@ -1,146 +1,64 @@
 <template>
-  <h1>This is the services page</h1>
-
-  <link
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    rel="stylesheet"
-  />
-  <section class="container pt-3 mb-3">
-    <h2 class="h3 block-title text-center">
-      What we do<small>Whatever we do, we do with your end user in mind </small>
-    </h2>
-    <div class="row pt-5 mt-30">
-      <div class="col-lg-4 col-sm-6 mb-30 pb-5">
-        <a class="card" href="#">
-          <div
-            class="box-shadow bg-white rounded-circle mx-auto text-center"
-            style="width: 90px; height: 90px; margin-top: -45px"
-          >
-            <i class="fa fa-user fa-3x head-icon"></i>
+  <section id="services">
+    <h1>This is the services page</h1>
+    <div class="container text-center">
+      <div class="card">
+        <h3 class="mb-5">Your simple, beautiful digital storefront</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="mt-2">
+                <img
+                  src="https://img.icons8.com/ios/90/000000/camera--v3.png"
+                  width="70"
+                  height="70"
+                />
+              </div>
+              <h5 class="mt-3">Photography</h5>
+              <small
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit ipsam reprehenderit. Ratione sint aliquid dolorem dicta amet voluptatibus repellat minus fugit ipsa laudantium ut aspernatur, sequi facere, possimus voluptate!</small
+              >
+            </div>
           </div>
-          <div class="card-body text-center">
-            <h3 class="card-title pt-1">UX Prototyping</h3>
-            <p class="card-text text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip.
-            </p>
-            <span class="text-sm text-uppercase font-weight-bold"
-              >Learn More&nbsp;<i class="fe-icon-arrow-right"></i
-            ></span>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="mt-2">
+                <img
+                  src="https://img.icons8.com/ios/50/000000/short.png"
+                  width="70"
+                  height="70"
+                />
+              </div>
+              <h5 class="mt-3">Videography</h5>
+              <small
+                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio consequuntur libero officiis sapiente nobis reprehenderit, aliquam consequatur, obcaecati ea facere, eum repellat eaque possimus dicta placeat nulla tempore veritatis totam.</small
+              >
+            </div>
           </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-30 pb-5">
-        <a class="card" href="#">
-          <div
-            class="box-shadow bg-white rounded-circle mx-auto text-center"
-            style="width: 90px; height: 90px; margin-top: -45px"
-          >
-            <i class="fa fa-user-circle-o fa-3x head-icon"></i>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="mt-2">
+                <img
+                  src="https://img.icons8.com/ios-filled/50/000000/laptop.png"
+                  width="70"
+                  height="70"
+                />
+              </div>
+              <h5 class="mt-3">Photo & Video editing</h5>
+              <small
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet neque deserunt pariatur ab harum repellendus temporibus mollitia sit! Voluptatum sapiente natus nulla! Molestias odio voluptas officiis maiores, repudiandae eligendi nulla?</small
+              >
+            </div>
           </div>
-          <div class="card-body text-center">
-            <h3 class="card-title pt-1">Web &amp; UI Design</h3>
-            <p class="card-text text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip.
-            </p>
-            <span class="text-sm text-uppercase font-weight-bold"
-              >Learn More&nbsp;<i class="fe-icon-arrow-right"></i
-            ></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-30 pb-5">
-        <a class="card" href="#">
-          <div
-            class="box-shadow bg-white rounded-circle mx-auto text-center"
-            style="width: 90px; height: 90px; margin-top: -45px"
-          >
-            <i class="fa fa-address-book fa-3x head-icon"></i>
-          </div>
-          <div class="card-body text-center">
-            <h3 class="card-title pt-1">Front-End Development</h3>
-            <p class="card-text text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip.
-            </p>
-            <span class="text-sm text-uppercase font-weight-bold"
-              >Learn More&nbsp;<i class="fe-icon-arrow-right"></i
-            ></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-30 pb-5">
-        <a class="card" href="#">
-          <div
-            class="box-shadow bg-white rounded-circle mx-auto text-center"
-            style="width: 90px; height: 90px; margin-top: -45px"
-          >
-            <i class="fa fa-car fa-3x head-icon"></i>
-          </div>
-          <div class="card-body text-center">
-            <h3 class="card-title pt-1">Back-End Development</h3>
-            <p class="card-text text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip.
-            </p>
-            <span class="text-sm text-uppercase font-weight-bold"
-              >Learn More&nbsp;<i class="fe-icon-arrow-right"></i
-            ></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-30 pb-5">
-        <a class="card" href="#">
-          <div
-            class="box-shadow bg-white rounded-circle mx-auto text-center"
-            style="width: 90px; height: 90px; margin-top: -45px"
-          >
-            <i class="fa fa-camera fa-3x head-icon"></i>
-          </div>
-          <div class="card-body text-center">
-            <h3 class="card-title pt-1">Usability Testing</h3>
-            <p class="card-text text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip.
-            </p>
-            <span class="text-sm text-uppercase font-weight-bold"
-              >Learn More&nbsp;<i class="fe-icon-arrow-right"></i
-            ></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-30 pb-5">
-        <a class="card" href="#">
-          <div
-            class="box-shadow bg-white rounded-circle mx-auto text-center"
-            style="width: 90px; height: 90px; margin-top: -45px"
-          >
-            <i class="fa fa-image fa-3x head-icon"></i>
-          </div>
-          <div class="card-body text-center">
-            <h3 class="card-title pt-1">SEO Optimization</h3>
-            <p class="card-text text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip.
-            </p>
-            <span class="text-sm text-uppercase font-weight-bold"
-              >Learn More&nbsp;<i class="fe-icon-arrow-right"></i
-            ></span>
-          </div>
-        </a>
+        </div>
+        <div class="button mt-5">
+          <button class="btn btn-primary pro-button">
+            <router-link to="/photographers">
+              More from our photographers</router-link
+            >
+            
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -150,119 +68,60 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap");
+
+#services {
+  padding-top: 150px;
+}
+
 body {
-  margin-top: 20px;
+  display: grid;
+  place-items: center;
   background: #eee;
+  font-family: "Manrope", sans-serif;
 }
-.card::after {
-  display: block;
-  position: absolute;
-  bottom: -10px;
-  left: 20px;
-  width: calc(100% - 40px);
-  height: 35px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 19px 28px 5px rgba(64, 64, 64, 0.09);
-  box-shadow: 0 19px 28px 5px rgba(64, 64, 64, 0.09);
-  content: "";
-  z-index: -1;
-}
-a.card {
-  text-decoration: none;
+button {
+  color: white;
 }
 
 .card {
   position: relative;
-  border: 0;
-  border-radius: 0;
-  background-color: #fff;
-  -webkit-box-shadow: 0 12px 20px 1px rgba(64, 64, 64, 0.09);
-  box-shadow: 0 12px 20px 1px rgba(64, 64, 64, 0.09);
-}
-.card {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   min-width: 0;
+  padding: 50px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 6px;
+  -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
 }
 
-.box-shadow {
-  -webkit-box-shadow: 0 12px 20px 1px rgba(64, 64, 64, 0.09) !important;
-  box-shadow: 0 12px 20px 1px rgba(64, 64, 64, 0.09) !important;
+.pro-button {
+  padding: 12px 42px;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
 }
 
-.ml-auto,
-.mx-auto {
-  margin-left: auto !important;
-}
-.mr-auto,
-.mx-auto {
-  margin-right: auto !important;
-}
-.rounded-circle {
-  border-radius: 50% !important;
-}
-.bg-white {
-  background-color: #fff !important;
+.pro-button:focus {
+  outline: none !important;
+  background-color: #ffa000;
+  border-color: #ffa000;
+  box-shadow: 0 0 0 0.2rem rgb(255, 255, 255) !important;
 }
 
-.ml-auto,
-.mx-auto {
-  margin-left: auto !important;
+.pro-button:active {
+  outline: none !important;
+  background-color: #ffa000 !important;
+  border-color: #ffa000 !important;
 }
 
-.mr-auto,
-.mx-auto {
-  margin-right: auto !important;
-}
-.d-block {
-  display: block !important;
-}
-img,
-figure {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-}
-
-.card-text {
-  padding-top: 12px;
-  color: #8c8c8c;
-}
-
-.text-sm {
-  font-size: 12px !important;
-}
-p,
-.p {
-  margin: 0 0 16px;
-}
-
-.card-title {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-weight: 900;
-}
-
-.pt-1,
-.py-1 {
-  padding-top: 0.25rem !important;
-}
-
-.head-icon {
-  margin-top: 18px;
-  color: #ff4500;
+.pro-button:hover {
+  padding: 12px 42px;
+  background-color: rgba(128, 0, 0, 0.801);
+  border-color: rgba(128, 0, 0, 0.801)
+  ;
 }
 </style>
