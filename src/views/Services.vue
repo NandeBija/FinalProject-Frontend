@@ -16,7 +16,10 @@
               </div>
               <h5 class="mt-3">Photography</h5>
               <small
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit ipsam reprehenderit. Ratione sint aliquid dolorem dicta amet voluptatibus repellat minus fugit ipsa laudantium ut aspernatur, sequi facere, possimus voluptate!</small
+                >Our photographers are best equipped to turn your special
+                moments to foerever memories. We offer photography services for
+                events inclusing; Weddings, Graduation, Imigidi, Birthdays, et
+                cetera.</small
               >
             </div>
           </div>
@@ -31,7 +34,10 @@
               </div>
               <h5 class="mt-3">Videography</h5>
               <small
-                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio consequuntur libero officiis sapiente nobis reprehenderit, aliquam consequatur, obcaecati ea facere, eum repellat eaque possimus dicta placeat nulla tempore veritatis totam.</small
+                >Have a social event you'd like to film? Dont worry, SnapAway's
+                got you. <br />
+                We shoot short documentaries. Adverts. Short films, et
+                cetera</small
               >
             </div>
           </div>
@@ -46,8 +52,28 @@
               </div>
               <h5 class="mt-3">Photo & Video editing</h5>
               <small
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet neque deserunt pariatur ab harum repellendus temporibus mollitia sit! Voluptatum sapiente natus nulla! Molestias odio voluptas officiis maiores, repudiandae eligendi nulla?</small
-              >
+                >Instagram-worthy photographs? We have a professional team
+                available to help take weight off your shoulders when it comes
+                to video and photo editing
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4" style="padding-top: 20px">
+            <div class="text-center">
+              <div class="mt-2">
+                <img
+                  src="https://img.icons8.com/ios/50/000000/books.png"
+                  width="70"
+                  height="70"
+                />
+              </div>
+              <h5 class="mt-3">Photography course</h5>
+              <small
+                >We offer short (6-month) online and in-contact courses to help
+                take your mediocre photography skills to the next level!
+              </small>
             </div>
           </div>
         </div>
@@ -56,7 +82,6 @@
             <router-link to="/photographers">
               More from our photographers</router-link
             >
-            
           </button>
         </div>
       </div>
@@ -121,7 +146,6 @@ button {
 .pro-button:hover {
   padding: 12px 42px;
   background-color: rgba(128, 0, 0, 0.801);
-  border-color: rgba(128, 0, 0, 0.801)
-  ;
+  border-color: rgba(128, 0, 0, 0.801);
 }
 </style>
