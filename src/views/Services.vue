@@ -1,15 +1,15 @@
 <template>
   <section id="services">
-    <h1>This is the services page</h1>
+    <h1>Services</h1>
     <div class="container text-center">
       <div class="card">
-        <h3 class="mb-5">Your simple, beautiful digital storefront</h3>
+        <h3 class="mb-5">Make appointment booking a snap</h3>
         <div class="row">
           <div class="col-md-4">
             <div class="text-center">
               <div class="mt-2">
                 <img
-                  src="https://img.icons8.com/ios/90/000000/camera--v3.png"
+                  src="https://img.icons8.com/ios/40/000000/camera--v3.png"
                   width="70"
                   height="70"
                 />
@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="text-center">
+            <div class="text-center" id="vid">
               <div class="mt-2">
                 <img
                   src="https://img.icons8.com/ios/50/000000/short.png"
@@ -35,7 +35,7 @@
               <h5 class="mt-3">Videography</h5>
               <small
                 >Have a social event you'd like to film? Dont worry, SnapAway's
-                got you. <br />
+                got you. 
                 We shoot short documentaries. Adverts. Short films, et
                 cetera</small
               >
@@ -99,6 +99,11 @@ export default {};
 #services {
   padding-top: 150px;
 }
+h1 {
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 10px;
+}
 
 body {
   display: grid;
@@ -108,6 +113,12 @@ body {
 }
 button {
   color: white;
+}
+img{
+  /* background-color: rgb(228, 148, 1); */
+  /* border-radius: 40px; */
+  background-size: contain;
+  
 }
 
 .card {

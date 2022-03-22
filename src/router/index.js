@@ -7,7 +7,9 @@ import Login from "../views/Login";
 import Contact from "../views/Contact";
 import PasswordReset from "../views/PasswordReset";
 import Photographer1 from "../views/Photographer1";
+import Photographer2 from "../views/Photographer2";
 import Booking from "../views/Booking";
+import Checkout from "../views/Checkout";
 
 const routes = [
   {
@@ -60,9 +62,19 @@ const routes = [
     component: Photographer1,
   },
   {
+    path: "/photographer2",
+    name: "Photographer2",
+    component: Photographer2,
+  },
+  {
     path: "/booking",
     name: "Booking",
     component: Booking,
+  },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    component: Checkout,
   },
 ];
 

@@ -1,120 +1,166 @@
 <template>
-  <div class="container" id="photographers">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card p-0">
-          <div class="card-image">
-            <router-link to="/photographer1">
-              <img src="https://i.postimg.cc/4NXGDQWf/photographer1.png" alt=""
-            /></router-link>
-          </div>
-          <div class="card-content d-flex flex-column align-items-center">
-            <h4 class="pt-2">Seko Mpofu</h4>
-            <h5>Photographer|Model</h5>
-            <ul class="social-icons d-flex justify-content-center">
-              <li style="--i: 1">
-                <a href="https://www.facebook.com/">
-                  <img
-                    src="https://img.icons8.com/ios/30/000000/facebook-new.png"
-                  />
-                </a>
-              </li>
-              <li style="--i: 2">
-                <a href="#">
-                  <img
-                    src="https://img.icons8.com/ios/30/000000/twitter--v1.png"
-                  />
-                </a>
-              </li>
-              <li style="">
-                <a href="https://www.instagram.com/melachild_blvck/">
-                  <img
-                    src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png"
-                  />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card p-0">
-          <div class="card-image">
-            <img
-              src="https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png"
-              alt=""
-            />
-          </div>
-          <div class="card-content d-flex flex-column align-items-center">
-            <h4 class="pt-2">Ano Yono</h4>
-            <h5>Photographer</h5>
-            <ul class="social-icons d-flex justify-content-center">
-              <li style="--i: 1">
-                <a href="https://www.facebook.com/">
-                  <img
-                    src="https://img.icons8.com/ios/30/000000/facebook-new.png"
-                /></a>
-              </li>
-              <li style="--i: 2">
-                <a href="#">
-                  <img
-                    src="https://img.icons8.com/ios/30/000000/twitter--v1.png"
-                  />
-                </a>
-              </li>
-              <li style="--i: 3">
-                <a href="https://www.instagram.com/annothaandoy/">
-                  <img
-                    src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png"
-                  />
-                </a>
-              </li>
-            </ul>
+  <section>
+    <div class="container" id="photographers">
+      <h1>Meet our <span>Photographers!</span></h1>
+      <div class="row">
+        <div
+          v-for="photographer of photographers"
+          :key="photographer.title"
+          class="col-lg-4"
+        >
+          <div class="card p-0">
+            <div class="card-image">
+              <router-link to="/photographer1">
+                <img :src="photographer.img" alt="photographer"
+              /></router-link>
+            </div>
+            <div class="card-content d-flex flex-column align-items-center">
+              <h4 class="pt-2">{{ photographer.title }}</h4>
+              <h5>{{ photographer.role }}</h5>
+              <ul class="social-icons d-flex justify-content-center">
+                <li style="--i: 1">
+                  <a :href="photographer.facebook_link">
+                    <img :src="photographer.facebook_img" />
+                  </a>
+                </li>
+                <li style="--i: 2">
+                  <a :href="photographer.twitter_link">
+                    <img :src="photographer.twitter_img" />
+                  </a>
+                </li>
+                <li style="">
+                  <a :href="photographer.insta_link">
+                    <img :src="photographer.insta_img" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card p-0">
-          <div class="card-image">
-            <img
-              src="https://images.pexels.com/photos/139829/pexels-photo-139829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt=""
-            />
+        <!-- <div class="col-lg-4">
+          <div class="card p-0">
+            <div class="card-image">
+              <router-link to="/photographer2">
+                <img
+                  src="https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png"
+                  alt=""
+              /></router-link>
+            </div> -->
+        <!-- <div class="card-content d-flex flex-column align-items-center">
+              <h4 class="pt-2">Ano Yono</h4>
+              <h5>Photographer</h5>
+              <ul class="social-icons d-flex justify-content-center">
+                <li style="--i: 1">
+                  <a href="https://www.facebook.com/">
+                    <img
+                      src="https://img.icons8.com/ios/30/000000/facebook-new.png"
+                  /></a>
+                </li>
+                <li style="--i: 2">
+                  <a href="#">
+                    <img
+                      src="https://img.icons8.com/ios/30/000000/twitter--v1.png"
+                    />
+                  </a>
+                </li>
+                <li style="--i: 3">
+                  <a href="https://www.instagram.com/annothaandoy/">
+                    <img
+                      src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="card-content d-flex flex-column align-items-center">
-            <h4 class="pt-2">SomeOne Famous</h4>
-            <h5>Creative Desinger</h5>
-            <ul class="social-icons d-flex justify-content-center">
-              <li style="--i: 1">
-                <a href="https://www.facebook.com/"
-                  ><img
-                    src="https://img.icons8.com/ios/30/000000/facebook-new.png"
-                /></a>
-              </li>
-              <li style="--i: 2">
-                <a href="#">
-                  <img
-                    src="https://img.icons8.com/ios/30/000000/twitter--v1.png"
-                  />
-                </a>
-              </li>
-              <li style="--i: 3">
-                <a href="#">
-                  <img
-                    src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png"
-                  />
-                </a>
-              </li>
-            </ul>
+        </div> -->
+        <!-- <div class="col-lg-4">
+          <div class="card p-0">
+            <div class="card-image">
+              <img
+                src="https://images.pexels.com/photos/139829/pexels-photo-139829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                alt=""
+              />
+            </div>
+            <div class="card-content d-flex flex-column align-items-center">
+              <h4 class="pt-2">SomeOne Famous</h4>
+              <h5>Creative Desinger</h5>
+              <ul class="social-icons d-flex justify-content-center">
+                <li style="--i: 1">
+                  <a href="https://www.facebook.com/"
+                    ><img
+                      src="https://img.icons8.com/ios/30/000000/facebook-new.png"
+                  /></a>
+                </li>
+                <li style="--i: 2">
+                  <a href="#">
+                    <img
+                      src="https://img.icons8.com/ios/30/000000/twitter--v1.png"
+                    />
+                  </a>
+                </li>
+                <li style="--i: 3">
+                  <a href="#">
+                    <img
+                      src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      photographers: [
+        {
+          img: "https://i.postimg.cc/4NXGDQWf/photographer1.png",
+          title: "Seko Mpofu",
+          role: "Photographer|Model",
+          insta_img:
+            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+          insta_link: "https://www.instagram.com/melachild_blvck/",
+          facebook_link: "https://www.facebook.com/",
+          twitter_link: "",
+          router_link: "/photographer1",
+        },
+        {
+          img: "https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png",
+          title: "Anno Yono",
+          role: "Photographer|Model",
+          insta_img:
+            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+          insta_link: "https://www.instagram.com/melachild_blvck/",
+          facebook_link: "https://www.facebook.com/",
+          twitter_link: "",
+        },
+        {
+          img: "https://i.postimg.cc/4NXGDQWf/photographer1.png",
+          title: "Seko Mpofu",
+          role: "Photographer",
+          insta_img:
+            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+          insta_link: "https://www.instagram.com/melachild_blvck/",
+          facebook_link: "https://www.facebook.com/",
+          twitter_link: "",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -126,8 +172,15 @@ export default {};
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+section {
+  min-height: 80vh;
+  background-color: #eee;
+  background-size: cover;
+}
+
 #photographers {
-  padding-top: 100px;
+  padding-top: 80px;
   margin-left: 10%;
 }
 body {
@@ -143,7 +196,14 @@ body {
   display: flex;
   justify-content: center;
 }
-
+h1 {
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 50px;
+}
+span {
+  color: #dc3545;
+}
 .card {
   position: relative;
   padding: 0;

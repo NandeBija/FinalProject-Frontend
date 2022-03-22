@@ -1,94 +1,102 @@
 <template>
-  <section class="vh-100" style="background-color: #eee">
-    
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px">
-            <div class="card-body p-md-5">
-              <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                    Sign up
-                  </p>
-
-                  <div id="booking" class="section">
-                    <div class="section-center">
-                      <div class="container">
-                        <div class="row">
-                          <div class="booking-form">
-                            <div class="form-header">
-                              <h1>Make your reservation</h1>
-                            </div>
-                            <form>
-                              <div class="form-group">
-                                <input
-                                  class="form-control"
-                                  type="text"
-                                  placeholder="Country, ZIP, city..."
-                                />
-                                <span class="form-label">Destination</span>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group">
-                                    <input
-                                      class="form-control"
-                                      type="date"
-                                      required
-                                    />
-                                    <span class="form-label">Date</span>
-                                  </div>
-                                </div>
-                               
-                              </div>
-                              
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group">
-                                    <input
-                                      class="form-control"
-                                      type="email"
-                                      placeholder="Enter your Email"
-                                    />
-                                    <span class="form-label">Email</span>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-group">
-                                    <input
-                                      class="form-control"
-                                      type="tel"
-                                      placeholder="Enter you Phone"
-                                    />
-                                    <span class="form-label">Phone</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="form-btn">
-                                <button class="submit-btn">Book Now</button>
-                              </div>
-                            </form>
+  <section style="background-color: #eee">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                Book a photographer with Snap<span>Away</span>
+              </p>
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <div id="booking" class="section">
+                  <div class="section-center">
+                    <div class="container">
+                      <div class="row">
+                        <div class="booking-form">
+                          <div class="form-header">
+                            <h1>Make your booking</h1>
                           </div>
+                          <form>
+                            <div class="form-group">
+                              <input
+                                class="form-control"
+                                type="text"
+                                placeholder="Country, ZIP, city..."
+                                v-model="location"
+                              />
+                              <span class="form-label">Location</span>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input
+                                    class="form-control"
+                                    type="date"
+                                    required
+                                  />
+                                  <span class="form-label">Date</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input
+                                    class="form-control"
+                                    type="email"
+                                    placeholder="Enter your Email"
+                                  />
+                                  <span class="form-label">Email</span>
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input
+                                    class="form-control"
+                                    type="tel"
+                                    placeholder="Enter you Phone"
+                                  />
+                                  <span class="form-label">Phone</span>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input
+                                    class="form-control"
+                                    type="name"
+                                    placeholder="Enter photographer name"
+                                  />
+                                  <span class="form-label">Name</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-btn">
+                              <button class="submit-btn">Book Now</button>
+                            </div>
+                          </form>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
-                >
-                  <img
-                    src="../assets/SNAP.gif"
-                    class="img-fluid"
-                    alt="Sample image"
-                  />
-                </div>
+              </div>
+              <div
+                class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+              >
+                <img
+                  src="../assets/SNAP.gif"
+                  class="img-fluid"
+                  alt="Sample image"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-    
+    </div>
   </section>
 </template>
 
@@ -97,16 +105,20 @@ export default {};
 </script>
 
 <style scoped>
-.fa {
-  padding-bottom: 30px;
-}
 body {
   background-image: linear-gradient(to right, #7b1fa2, #e91e63);
+  overflow-x: hidden;
 }
 
 .section {
   position: relative;
-  height: 100vh;
+  padding-top: 550px;
+}
+.justify-content-center {
+  padding-top: 45px;
+}
+span {
+  color: #dc3545;
 }
 
 .section .section-center {
@@ -129,7 +141,7 @@ body {
   margin: auto;
   padding: 40px;
   overflow: hidden;
-  background-image: url("https://i.imgur.com/8z1tx3u.jpg");
+  background-image: url("https://www.smartphotoeditors.com/blog/wp-content/uploads/2019/11/Sony-A7R-III.jpg");
   background-size: cover;
   border-radius: 5px;
   z-index: 20;

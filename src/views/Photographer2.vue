@@ -8,8 +8,8 @@
             <div class="media align-items-end profile-head">
               <div class="profile mr-3">
                 <img
-                  src="https://i.postimg.cc/4NXGDQWf/photographer1.png"
-                  alt="..."
+                  src="https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png"
+                  alt=""
                   width="130"
                   class="rounded mb-2 img-thumbnail"
                 /><a href="#" class="btn btn-outline-dark btn-sm btn-block"
@@ -17,9 +17,10 @@
                 >
               </div>
               <div class="media-body mb-5 text-white">
-                <h4 class="mt-0 mb-0">Seko Mpofu</h4>
+                <h4 class="mt-0 mb-0">Anothando Yono</h4>
                 <p class="small mb-4">
-                  <i class="fas fa-map-marker-alt mr-2"></i>Cape Town
+                  <i class="fas fa-map-marker-alt mr-2"></i>East London, South
+                  Africa
                 </p>
               </div>
             </div>
@@ -27,15 +28,15 @@
           <div class="bg-light p-4 d-flex justify-content-end text-center">
             <ul class="list-inline mb-0">
               <li class="list-inline-item">
-                <h5 class="font-weight-bold mb-0 d-block">10</h5>
+                <h5 class="font-weight-bold mb-0 d-block">5</h5>
                 <small class="text-muted"> Projects</small>
               </li>
               <li class="list-inline-item">
-                <h5 class="font-weight-bold mb-0 d-block">745</h5>
+                <h5 class="font-weight-bold mb-0 d-block">334</h5>
                 <small class="text-muted"> Followers</small>
               </li>
               <li class="list-inline-item">
-                <h5 class="font-weight-bold mb-0 d-block">340</h5>
+                <h5 class="font-weight-bold mb-0 d-block">88</h5>
                 <small class="text-muted"> Following</small>
               </li>
             </ul>
@@ -43,9 +44,9 @@
           <div class="px-4 py-3">
             <h5 class="mb-0">About</h5>
             <div id="sec" class="p-4 rounded shadow-sm bg-light">
-              <p class="font-italic mb-0">Videographer</p>
-              <p class="font-italic mb-0">Photographer</p>
-              <p class="font-italic mb-0">Lives in Cape Town</p>
+              <p class="font-italic mb-0">Landscape photographer</p>
+              <p class="font-italic mb-0">+1 years experience</p>
+              <p class="font-italic mb-0">Lives in East London</p>
 
               <button
                 type="button"
@@ -100,29 +101,13 @@
 </template>
 
 <script>
-export default {
-  data(){
-    return {
-      // photographers: [
-      //   {profilePic:"",
-      //   name:"",
-      //   city:"",
-      //   project_number:"",
-      //   following_number:"",
-      //   follower_number:"",
-      //   }
-
-
-      // ]
-    }
-  }
-};
+export default {};
 </script>
 
 <style scoped>
 #body {
   overflow-x: hidden;
-  background-image: url("https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
+  background-image: url("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -143,7 +128,7 @@ button:hover {
 }
 
 .cover {
-  background-image: url("https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
+  background-image: url("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 35vh;

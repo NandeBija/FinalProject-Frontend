@@ -1,10 +1,8 @@
 <template>
   <div class="container mt-5">
-    <!--Section: Content-->
     <section class="dark-grey-text mb-5">
-      <!-- Section heading -->
       <h3 class="font-weight-bold text-center mb-4">Contact Us</h3>
-      <!-- Section description -->
+
       <p class="text-center w-responsive mx-auto pb-5">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
         amet numquam iure provident voluptate esse quasi, veritatis totam
@@ -28,44 +26,54 @@
                 We'll write rarely, but only the best content.
               </p>
               <!-- Body -->
-              <div class="md-form">
-                <input
-                  type="text"
-                  id="form-name"
-                  class="form-control"
-                  required
-                />
-                <label for="form-name">Your name</label>
-              </div>
-              <div class="md-form">
-                <input
-                  type="text"
-                  id="form-email"
-                  class="form-control"
-                  required
-                />
-                <label for="form-email">Your email</label>
-              </div>
-              <div class="md-form">
-                <input type="text" id="form-Subject" class="form-control" />
-                <label for="form-Subject">Subject</label>
-              </div>
-              <div class="md-form">
-                <textarea
-                  id="form-text"
-                  class="form-control md-textarea"
-                  rows="3"
-                ></textarea>
-                <label for="form-text">Send message</label>
-              </div>
-              <div class="text-center">
-                <button
-                  class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                  type="button"
-                >
-                  Submit
-                </button>
-              </div>
+              <form @submit.prevent="handleSubmit">
+                <div class="md-form">
+                  <input
+                    type="text"
+                    id="form-name"
+                    class="form-control"
+                    v-model="name"
+                    required
+                  />
+                  <label for="form-name">Your name</label>
+                </div>
+                <div class="md-form">
+                  <input
+                    type="text"
+                    id="form-email"
+                    class="form-control"
+                    v-model="email"
+                    required
+                  />
+                  <label for="form-email">Your email</label>
+                </div>
+                <div class="md-form">
+                  <input
+                    type="text"
+                    id="form-Subject"
+                    class="form-control"
+                    v-model="subject"
+                  />
+                  <label for="form-Subject">Subject</label>
+                </div>
+                <div class="md-form">
+                  <textarea
+                    id="form-text"
+                    class="form-control md-textarea"
+                    rows="3"
+                    v-model="message"
+                  ></textarea>
+                  <label for="form-text">Send message</label>
+                </div>
+                <div class="text-center">
+                  <button
+                    class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                    type="Submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <!-- Form with header -->
@@ -129,7 +137,37 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    };
+  },
+  methods: {
+    handleSubmit() {
+      fetch("herokulink/contact", {
+        method: "POST",
+        body: JSON.stringify({
+          name: this.name,
+          email: this.email,
+          subjact: this.subject,
+          message: this.message,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => (this.contact = data));
+      alert("Message has been sent successfully").catch((err) =>
+        console.log(err.message)
+      );
+    },
+  },
+};
 </script>
 
 <style scoped>
