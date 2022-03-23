@@ -28,7 +28,7 @@
       </svg> -->
     </div>
   </section>
-  <section>
+  <!-- <section>
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <script>

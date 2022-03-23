@@ -11,7 +11,7 @@
                     Sign up
                   </p>
 
-                  <form class="mx-1 mx-md-4">
+                  <form class="mx-1 mx-md-4" @submit="register">
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fa fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
@@ -20,6 +20,7 @@
                           id="form3Example1c"
                           class="form-control"
                           placeholder="Enter your name"
+                          v-model="name"
                         />
                         <label class="form-label" for="form3Example1c"
                           >Your Name</label
@@ -35,6 +36,7 @@
                           id="form3Example3c"
                           class="form-control"
                           placeholder="Enter your email address"
+                          v-model="email"
                         />
                         <label class="form-label" for="form3Example3c"
                           >Your Email</label
@@ -50,6 +52,7 @@
                           id="form3Example4c"
                           class="form-control"
                           placeholder="Enter your password"
+                          v-model="password"
                         />
                         <label class="form-label" for="form3Example4c"
                           >Password</label
@@ -60,7 +63,7 @@
                     <div
                       class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
                     >
-                      <button type="button" class="btn btn-primary btn-lg">
+                      <button type="submit" class="btn btn-primary btn-lg">
                         Register
                       </button>
                     </div>
@@ -85,7 +88,40 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      name: "",
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    register() {
+      fetch("https://finproject-backend.herokuapp.com/users/register", {
+        method: "POST",
+        body: JSON.stringify({
+          name: this.name,
+          email: this.email,
+          password: this.password,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          alert("User registered");
+          localStorage.setItem("jwt", json.jwt);
+          // this.$router.push({ name: "login" });
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>

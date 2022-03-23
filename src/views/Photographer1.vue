@@ -104,7 +104,8 @@ export default {
   data(){
     return {
       // photographers: [
-      //   {profilePic:"",
+      //   {
+        // profilePic:"",
       //   name:"",
       //   city:"",
       //   project_number:"",

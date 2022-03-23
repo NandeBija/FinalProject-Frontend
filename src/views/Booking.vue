@@ -34,6 +34,7 @@
                                     class="form-control"
                                     type="date"
                                     required
+                                    v-model="date"
                                   />
                                   <span class="form-label">Date</span>
                                 </div>
@@ -47,6 +48,7 @@
                                     class="form-control"
                                     type="email"
                                     placeholder="Enter your Email"
+                                    v-model="email"
                                   />
                                   <span class="form-label">Email</span>
                                 </div>
@@ -58,6 +60,7 @@
                                     class="form-control"
                                     type="tel"
                                     placeholder="Enter you Phone"
+                                    v-bind="phone"
                                   />
                                   <span class="form-label">Phone</span>
                                 </div>
@@ -68,6 +71,7 @@
                                     class="form-control"
                                     type="name"
                                     placeholder="Enter photographer name"
+                                    v-model="name"
                                   />
                                   <span class="form-label">Name</span>
                                 </div>

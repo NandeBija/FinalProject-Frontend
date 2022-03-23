@@ -16,7 +16,7 @@
                     <h4 class="mt-1 mb-5 pb-1">We are The SnapAway Team</h4>
                   </div>
 
-                  <form>
+                  <form @submit.prevent="login">
                     <p>Please login to your account</p>
 
                     <!-- <div class="form-outline mb-4">
@@ -35,10 +35,11 @@
                         type="name"
                         id="form2Example11"
                         class="form-control"
-                        placeholder="Enter username"
+                        placeholder="Enter email"
+                        v-model="email"
                       />
                       <label class="form-label" for="form2Example11"
-                        >Username</label
+                        >Email</label
                       >
                     </div>
 
@@ -48,6 +49,7 @@
                         id="form2Example22"
                         class="form-control"
                         placeholder="Enter password"
+                        v-model="password"
                       />
                       <label class="form-label" for="form2Example22"
                         >Password</label
@@ -57,7 +59,7 @@
                     <div class="text-center pt-1 mb-5 pb-1">
                       <button
                         class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                        type="button"
+                        type="submit"
                       >
                         Log in
                       </button>
@@ -92,7 +94,39 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+   
+    login() {
+      fetch("https://finproject-backend.herokuapp.com/users/login", {
+        method: "PATCH",
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          localStorage.setItem("jwt", json.jwt);
+          alert("User logged in");
+          this.$router.push({ name: "services" });
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>
