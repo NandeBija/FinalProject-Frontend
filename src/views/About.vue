@@ -52,7 +52,6 @@ export default {};
 </script>
 
 <style scoped>
-
 .curved {
   background-color: brown;
   color: white;
@@ -60,11 +59,10 @@ export default {};
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 150px;
-  
 }
-.container{
-  min-height: 30vh;
-  padding-top: 10px
+.container {
+  height: 55vh;
+  padding-top: 10px;
 }
 .curved h1 {
   font-size: 4rem;
@@ -92,5 +90,10 @@ button {
   background-color: rgb(220, 227, 245);
   position: relative;
   bottom: 100px;
+}
+@media (min-width: 690px) {
+  .col:nth-child(1) {
+    display: none;
+  }
 }
 </style>
