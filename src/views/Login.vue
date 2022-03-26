@@ -115,12 +115,14 @@ export default {
       })
         .then((response) => response.json())
         .then((json) => {
-
-          localStorage.setItem("jwt", json.jwt);
-          
-          if(json.jwt) {alert("User logged in"); this.$router.push({ name: "Services" });}
-          alert("Wrong credentials")
-          location.reload()
+          if (json.jwt) {
+            localStorage.setItem("jwt", json.jwt);
+          }
+          if (localStorage.getItem("jwt")) {
+            this.$router.push({ name: "Home" });
+          } else {
+            alert("Incorrect credentials");
+          }
         })
         .catch((err) => {
           alert(err);
