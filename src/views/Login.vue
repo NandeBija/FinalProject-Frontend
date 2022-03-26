@@ -117,6 +117,10 @@ export default {
         .then((json) => {
           if (json.jwt) {
             localStorage.setItem("jwt", json.jwt);
+            localStorage.setItem("user", JSON.stringify(json.user));
+            console.log(json.user)
+            
+            
           }
           if (localStorage.getItem("jwt")) {
             this.$router.push({ name: "Home" });

@@ -48,7 +48,7 @@
           </li>
         </ul>
         <div class="d-flex align-items-center">
-          <button type="button" class="btn" v-if="userLoggedIn && isAdmin">
+          <button type="button" class="btn" v-if="isLoggedIn && user.isAdmin">
             <router-link to="/login" >Create user</router-link>
           </button>
           <button type="button" class="btn">
@@ -69,6 +69,11 @@
 
 <script>
 export default {
+  data(){
+    return{
+      user:JSON.parse(localStorage.getItem('user'))
+    }
+  },
   methods: {
     myFunction() {
       var x = document.getElementById("myTopnav");
@@ -78,13 +83,17 @@ export default {
         x.className = "topnav";
       }
     },
-  },
-  computed: {
     logout() {
       localStorage.clear();
       alert("User logged out");
     },
   },
+  mounted(){
+    console.log(this.user)
+  },
+  
+    
+ 
 };
 </script>
 
