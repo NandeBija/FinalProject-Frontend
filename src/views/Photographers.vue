@@ -26,6 +26,7 @@
           :key="photographer._id"
           class="col-lg-4"
         >
+        
           <div class="card p-0">
             <div class="card-image">
               <img :src="photographer.img" alt="photographer" />
