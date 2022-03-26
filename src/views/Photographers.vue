@@ -23,7 +23,7 @@
       <div class="row">
         <div
           v-for="photographer of photographers"
-          :key="photographer.title"
+          :key="photographer._id"
           class="col-lg-4"
         >
           <div class="card p-0">

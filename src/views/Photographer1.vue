@@ -237,14 +237,14 @@ button:hover {
   background-color: red;
 }
 #sec {
-  height: 140px;
+  height: 180px;
 }
 
 .cover {
   background-image: url("https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 35vh;
+  height: 302px
 }
 .profile,
 .btn {

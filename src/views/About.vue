@@ -13,10 +13,14 @@
           </div>
           <div class="col">
             <p>
-            We have the best photographers in the game available for any and every event.
-
+           Let us capture your moments!<br>
+           Make a provisional booking using <a><router-link to="/booking"> this form </router-link></a>below to see if we have availability, and we will get back to you within 48 hours.
             
             </p>
+            <p>We sometimes experience problems receiving emails from Hotmail accounts. If you don’t receive a reply from us within 3 days, please resend via another email account. Thank you.
+
+For emergencies, please contact us at:<br>
+Tel:  +01 234 567 88</p>
           </div>
         </div>
       </div>
@@ -49,6 +53,9 @@ export default {};
   min-height: 30vh;
   padding-top: 10px;
 }
+p:nth-child(1){
+  font-size:8rem;
+}
 .curved h1 {
   font-size: 4rem;
   margin-top: 0;
@@ -59,6 +66,9 @@ h2 {
 }
 img {
   max-width: 500px;
+}
+.col p{
+  padding-top:15px;
 }
 .curved p {
   font-size: 1rem;
