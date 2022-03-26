@@ -20,7 +20,8 @@
                           id="form3Example1c"
                           class="form-control"
                           placeholder="Enter your name"
-                          v-model="name"
+                          v-model="username"
+                          required
                         />
                         <label class="form-label" for="form3Example1c"
                           >Your Name</label
@@ -37,6 +38,7 @@
                           class="form-control"
                           placeholder="Enter your email address"
                           v-model="email"
+                          required
                         />
                         <label class="form-label" for="form3Example3c"
                           >Your Email</label
@@ -53,6 +55,7 @@
                           class="form-control"
                           placeholder="Enter your password"
                           v-model="password"
+                          required
                         />
                         <label class="form-label" for="form3Example4c"
                           >Password</label
@@ -91,7 +94,7 @@
 export default {
   data() {
     return {
-      name: "",
+      username: "",
       email: "",
       password: "",
     };
@@ -101,7 +104,7 @@ export default {
       fetch("https://finproject-backend.herokuapp.com/users/register", {
         method: "POST",
         body: JSON.stringify({
-          name: this.name,
+          username: this.username,
           email: this.email,
           password: this.password,
         }),
@@ -114,7 +117,7 @@ export default {
           console.log(json);
           alert("User registered");
           localStorage.setItem("jwt", json.jwt);
-          // this.$router.push({ name: "login" });
+          this.$router.push({ name: "Login" });
         })
         .catch((err) => {
           alert(err);

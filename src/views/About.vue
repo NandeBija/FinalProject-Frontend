@@ -13,24 +13,9 @@
           </div>
           <div class="col">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est illo
-              accusantium aliquam dolore fuga aliquid, dolorum rem veritatis
-              provident, vel unde sunt veniam. Eos cum deserunt doloribus quis
-              ipsam facilis?Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Asperiores excepturi velit beatae rem tenetur eligendi
-              assumenda, minima consectetur corporis quo, molestiae a ipsa!
-              Commodi iusto voluptatibus voluptas alias cumque aspernatur! Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Est illo
-              accusantium aliquam dolore fuga aliquid, dolorum rem veritatis
-              provident, vel unde sunt veniam. Eos cum deserunt doloribus quis
-              ipsam facilis?Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Asperiores excepturi velit beatae rem tenetur eligendi
-              assumenda, minima consectetur corporis quo, molestiae a ipsa!
-              Commodi iusto voluptatibus voluptas alias cumque aspernatur! Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Est illo
-              accusantium aliquam dolore fuga aliquid, dolorum rem veritatis
-              provident, vel unde sunt veniam. Eos cum deserunt doloribus quis
-              ipsam facilis?Lorem ipsum dolor sit amet, consectetur adipisicing
+            We have the best photographers in the game available for any and every event.
+
+            
             </p>
           </div>
         </div>
@@ -61,7 +46,7 @@ export default {};
   padding-top: 150px;
 }
 .container {
-  height: 55vh;
+  min-height: 30vh;
   padding-top: 10px;
 }
 .curved h1 {
@@ -91,7 +76,8 @@ button {
   position: relative;
   bottom: 100px;
 }
-@media (min-width: 690px) {
+
+@media (max-width: 690px) {
   .col:nth-child(1) {
     display: none;
   }

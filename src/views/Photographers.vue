@@ -1,7 +1,25 @@
 <template>
   <section>
     <div class="container" id="photographers">
-      <h1>Meet our <span>Photographers!</span></h1>
+      <h1>Meet our <span>Photographers</span></h1>
+      <div>
+        <button
+          type="submit"
+          class="btn btn-warning btn-lg"
+          style="padding-bottom: 15px"
+        >
+          <router-link to="/photographer1">
+            <span
+              v-if="loading"
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            View Photographers' latest work!
+          </router-link>
+        </button>
+      </div>
+
       <div class="row">
         <div
           v-for="photographer of photographers"
@@ -10,9 +28,7 @@
         >
           <div class="card p-0">
             <div class="card-image">
-              <router-link to="/photographer1">
-                <img :src="photographer.img" alt="photographer"
-              /></router-link>
+              <img :src="photographer.img" alt="photographer" />
             </div>
             <div class="card-content d-flex flex-column align-items-center">
               <h4 class="pt-2">{{ photographer.title }}</h4>
@@ -34,82 +50,27 @@
                   </a>
                 </li>
               </ul>
+              <button
+                type="submit"
+                class="btn btn-warning btn-lg"
+                style="padding-bottom: 15px"
+                v-if="userLoggedIn && isAdmin"
+              >
+                <router-link to="/photographer1">
+                  <span
+                    v-if="loading"
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                    @click="update()"
+                  ></span>
+                  Update photographer!
+                </router-link>
+              </button>
             </div>
           </div>
         </div>
-        <!-- <div class="col-lg-4">
-          <div class="card p-0">
-            <div class="card-image">
-              <router-link to="/photographer2">
-                <img
-                  src="https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png"
-                  alt=""
-              /></router-link>
-            </div> -->
-        <!-- <div class="card-content d-flex flex-column align-items-center">
-              <h4 class="pt-2">Ano Yono</h4>
-              <h5>Photographer</h5>
-              <ul class="social-icons d-flex justify-content-center">
-                <li style="--i: 1">
-                  <a href="https://www.facebook.com/">
-                    <img
-                      src="https://img.icons8.com/ios/30/000000/facebook-new.png"
-                  /></a>
-                </li>
-                <li style="--i: 2">
-                  <a href="#">
-                    <img
-                      src="https://img.icons8.com/ios/30/000000/twitter--v1.png"
-                    />
-                  </a>
-                </li>
-                <li style="--i: 3">
-                  <a href="https://www.instagram.com/annothaandoy/">
-                    <img
-                      src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="col-lg-4">
-          <div class="card p-0">
-            <div class="card-image">
-              <img
-                src="https://images.pexels.com/photos/139829/pexels-photo-139829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                alt=""
-              />
-            </div>
-            <div class="card-content d-flex flex-column align-items-center">
-              <h4 class="pt-2">SomeOne Famous</h4>
-              <h5>Creative Desinger</h5>
-              <ul class="social-icons d-flex justify-content-center">
-                <li style="--i: 1">
-                  <a href="https://www.facebook.com/"
-                    ><img
-                      src="https://img.icons8.com/ios/30/000000/facebook-new.png"
-                  /></a>
-                </li>
-                <li style="--i: 2">
-                  <a href="#">
-                    <img
-                      src="https://img.icons8.com/ios/30/000000/twitter--v1.png"
-                    />
-                  </a>
-                </li>
-                <li style="--i: 3">
-                  <a href="#">
-                    <img
-                      src="https://img.icons8.com/ios/30/000000/instagram-new--v1.png"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
+       
       </div>
     </div>
   </section>
@@ -117,8 +78,13 @@
 
 <script>
 export default {
+  props: ["id"],
   data() {
     return {
+      search: "",
+      category: "",
+      price: "",
+      title: "",
       photographers: [
         {
           img: "https://i.postimg.cc/4NXGDQWf/photographer1.png",
@@ -146,9 +112,9 @@ export default {
           twitter_link: "",
         },
         {
-          img: "https://i.postimg.cc/4NXGDQWf/photographer1.png",
-          title: "Seko Mpofu",
-          role: "Photographer",
+          img: "https://i.postimg.cc/hGP133Yh/Screenshot-from-2022-03-26-13-47-52.png",
+          title: "HisTall",
+          role: "Landscape photographer",
           insta_img:
             "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
           facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
@@ -157,8 +123,72 @@ export default {
           facebook_link: "https://www.facebook.com/",
           twitter_link: "",
         },
+        {
+          img: "https://i.postimg.cc/nVv9BGdW/Screenshot-from-2022-03-26-13-51-26.png",
+          title: "Nande Bija",
+          role: "Photographer",
+          insta_img:
+            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+          insta_link: "https://www.instagram.com/melachild_blvck/",
+          facebook_link: "https://www.facebook.com/",
+          twitter_link: "",
+          router_link: "/photographer1",
+        },
+        {
+          img: "https://i.postimg.cc/KvG7YWZf/Screenshot-from-2022-03-26-13-57-45.png",
+          title: "Thuli P",
+          role: "Video editor",
+          insta_img:
+            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+          insta_link: "https://www.instagram.com/thuliphongolo/",
+          facebook_link: "https://www.facebook.com/",
+          twitter_link: "",
+        },
       ],
     };
+  },
+  computed: {
+    filterPhotographers: function () {
+      return this.photographers.filter((photographer) => {
+        return photographer.category
+          .toLowerCase()
+          .match(this.search.toLowerCase());
+      });
+    },
+  },
+  methods: {
+    sortTitle(title) {
+      this.filterPhotographers = this.filterPhotographers.sort((a, b) => {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+          return -1;
+        }
+        if (a.title.toLowerCase() > b.title.toLowerCase()) {
+          return 1;
+        }
+        return 0;
+      });
+      if (title == "desc") this.filterPhotographers.reverse();
+    },
+
+    filterCategory(category) {
+      if (category) {
+        this.filterPhotographers = this.photographers.filter(
+          (photographer) => photographer.category == category
+        );
+      } else {
+        this.filterPhotographers = this.photographers;
+      }
+    },
+  },
+  computed: {
+    update() {
+      localStorage.clear();
+      alert("User logged out");
+    },
   },
 };
 </script>
@@ -171,6 +201,13 @@ export default {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  padding-bottom: 20px;
+}
+
+.container .row .col-lg-4 {
+  display: flex;
+  justify-content: center;
+  padding-top: 34px;
 }
 
 section {

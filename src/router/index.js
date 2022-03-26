@@ -10,12 +10,19 @@ import Photographer1 from "../views/Photographer1";
 import Photographer2 from "../views/Photographer2";
 import Booking from "../views/Booking";
 import Checkout from "../views/Checkout";
+import Admin from "../views/Admin";
+
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: Admin,
   },
   {
     path: "/about",

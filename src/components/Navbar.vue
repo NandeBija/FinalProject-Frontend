@@ -48,11 +48,18 @@
           </li>
         </ul>
         <div class="d-flex align-items-center">
+          <button type="button" class="btn" v-if="userLoggedIn && isAdmin">
+            <router-link to="/login" >Create user</router-link>
+          </button>
           <button type="button" class="btn">
             <router-link to="/login">Login</router-link>
           </button>
+
           <button type="button" class="btn" id="btn">
             <router-link to="/register">Sign up</router-link>
+          </button>
+          <button @click="logout()" type="button" class="btn">
+            <router-link to="/">Logout</router-link>
           </button>
         </div>
       </div>
@@ -70,6 +77,12 @@ export default {
       } else {
         x.className = "topnav";
       }
+    },
+  },
+  computed: {
+    logout() {
+      localStorage.clear();
+      alert("User logged out");
     },
   },
 };
@@ -116,11 +129,9 @@ export default {
   background-color: greenyellow;
   color: white;
 }
-#btn:hover{
+#btn:hover {
   background-color: maroon;
-
 }
-
 
 .fa {
   position: relative;
@@ -180,19 +191,19 @@ export default {
     text-align: left;
   }
   .navbar {
-  overflow: hidden;
-  background-color: white;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 600;
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 600;
 
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 37px;
-}
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 37px;
+  }
   .topnav {
     overflow: hidden;
     background-color: #000000;

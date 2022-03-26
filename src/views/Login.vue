@@ -1,6 +1,6 @@
 <template>
   <section class="h-100 gradient-form" style="background-color: #eee">
-    <div class="container py-5 h-100">
+    <div class="container py-5">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
           <div class="card rounded-3 text-black">
@@ -102,7 +102,6 @@ export default {
     };
   },
   methods: {
-   
     login() {
       fetch("https://finproject-backend.herokuapp.com/users/login", {
         method: "PATCH",
@@ -116,10 +115,12 @@ export default {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
+
           localStorage.setItem("jwt", json.jwt);
-          alert("User logged in");
-          this.$router.push({ name: "services" });
+          
+          if(json.jwt) {alert("User logged in"); this.$router.push({ name: "Services" });}
+          alert("Wrong credentials")
+          location.reload()
         })
         .catch((err) => {
           alert(err);
