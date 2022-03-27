@@ -32,7 +32,7 @@
               <img :src="photographer.img" alt="photographer" />
             </div>
             <div class="card-content d-flex flex-column align-items-center">
-              <h4 class="pt-2">{{ photographer.title }}</h4>
+              <h4 class="pt-2" required>{{ photographer.title }}</h4>
               <h5>{{ photographer.role }}</h5>
               <ul class="social-icons d-flex justify-content-center">
                 <li style="--i: 1">
