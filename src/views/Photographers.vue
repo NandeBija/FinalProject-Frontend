@@ -8,7 +8,7 @@
           class="btn btn-warning btn-lg"
           style="padding-bottom: 15px"
         >
-          <router-link to="/photographer1">
+          <router-link :to="{ name: 'Photographer1', params: { userId: 123 } }">
             <span
               v-if="loading"
               class="spinner-border spinner-border-sm"
@@ -27,25 +27,32 @@
           class="col-lg-4"
         >
           <div class="card p-0">
-            <div class="card-image">
-              <img :src="photographer.img" alt="photographer" />
-            </div>
+            <router-link
+              :to="{
+                name: 'Photographer1',
+                params: photographer,
+              }"
+            >
+              <div class="card-image">
+                <img :src="photographer.img" alt="photographer" />
+              </div>
+            </router-link>
             <div class="card-content d-flex flex-column align-items-center">
-              <h4 class="pt-2">{{ photographer.title }}</h4>
+              <h4 class="pt-2">{{ photographer.name }}</h4>
               <h5>{{ photographer.role }}</h5>
               <ul class="social-icons d-flex justify-content-center">
                 <li style="--i: 1">
-                  <a :href="photographer.facebook_link">
+                  <a :href="photographer.facebook_link" target="_blank">
                     <img :src="photographer.facebook_img" />
                   </a>
                 </li>
                 <li style="--i: 2">
-                  <a :href="photographer.twitter_link">
+                  <a :href="photographer.twitter_link" target="_blank">
                     <img :src="photographer.twitter_img" />
                   </a>
                 </li>
                 <li style="">
-                  <a :href="photographer.insta_link">
+                  <a :href="photographer.insta_link" target="_blank">
                     <img :src="photographer.insta_img" />
                   </a>
                 </li>
@@ -54,7 +61,6 @@
                 type="submit"
                 class="btn btn-warning btn-lg"
                 style="padding-bottom: 15px"
-                v-if="userLoggedIn && isAdmin"
               >
                 <router-link to="/photographer1">
                   <span
@@ -70,7 +76,6 @@
             </div>
           </div>
         </div>
-       
       </div>
     </div>
   </section>
@@ -85,70 +90,71 @@ export default {
       category: "",
       price: "",
       title: "",
-      photographers: [
-        {
-          img: "https://i.postimg.cc/4NXGDQWf/photographer1.png",
-          title: "Seko Mpofu",
-          role: "Photographer|Model",
-          insta_img:
-            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
-          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
-          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
-          insta_link: "https://www.instagram.com/melachild_blvck/",
-          facebook_link: "https://www.facebook.com/",
-          twitter_link: "",
-          router_link: "/photographer1",
-        },
-        {
-          img: "https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png",
-          title: "Anno Yono",
-          role: "Photographer|Model",
-          insta_img:
-            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
-          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
-          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
-          insta_link: "https://www.instagram.com/melachild_blvck/",
-          facebook_link: "https://www.facebook.com/",
-          twitter_link: "",
-        },
-        {
-          img: "https://i.postimg.cc/hGP133Yh/Screenshot-from-2022-03-26-13-47-52.png",
-          title: "HisTall",
-          role: "Landscape photographer",
-          insta_img:
-            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
-          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
-          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
-          insta_link: "https://www.instagram.com/melachild_blvck/",
-          facebook_link: "https://www.facebook.com/",
-          twitter_link: "",
-        },
-        {
-          img: "https://i.postimg.cc/nVv9BGdW/Screenshot-from-2022-03-26-13-51-26.png",
-          title: "Nande Bija",
-          role: "Photographer",
-          insta_img:
-            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
-          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
-          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
-          insta_link: "https://www.instagram.com/melachild_blvck/",
-          facebook_link: "https://www.facebook.com/",
-          twitter_link: "",
-          router_link: "/photographer1",
-        },
-        {
-          img: "https://i.postimg.cc/KvG7YWZf/Screenshot-from-2022-03-26-13-57-45.png",
-          title: "Thuli P",
-          role: "Video editor",
-          insta_img:
-            "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
-          facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
-          twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
-          insta_link: "https://www.instagram.com/thuliphongolo/",
-          facebook_link: "https://www.facebook.com/",
-          twitter_link: "",
-        },
-      ],
+      photographers: [],
+      // photographers: [
+      //   {
+      //     img: "https://i.postimg.cc/4NXGDQWf/photographer1.png",
+      //     title: "Seko Mpofu",
+      //     role: "Photographer|Model",
+      //     insta_img:
+      //       "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+      //     facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+      //     twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+      //     insta_link: "https://www.instagram.com/melachild_blvck/",
+      //     facebook_link: "https://www.facebook.com/",
+      //     twitter_link: "",
+      //     router_link: "/photographer1",
+      //   },
+      //   {
+      //     img: "https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png",
+      //     title: "Anno Yono",
+      //     role: "Photographer|Model",
+      //     insta_img:
+      //       "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+      //     facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+      //     twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+      //     insta_link: "https://www.instagram.com/melachild_blvck/",
+      //     facebook_link: "https://www.facebook.com/",
+      //     twitter_link: "",
+      //   },
+      //   {
+      //     img: "https://i.postimg.cc/hGP133Yh/Screenshot-from-2022-03-26-13-47-52.png",
+      //     title: "HisTall",
+      //     role: "Landscape photographer",
+      //     insta_img:
+      //       "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+      //     facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+      //     twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+      //     insta_link: "https://www.instagram.com/melachild_blvck/",
+      //     facebook_link: "https://www.facebook.com/",
+      //     twitter_link: "",
+      //   },
+      //   {
+      //     img: "https://i.postimg.cc/nVv9BGdW/Screenshot-from-2022-03-26-13-51-26.png",
+      //     title: "Nande Bija",
+      //     role: "Photographer",
+      //     insta_img:
+      //       "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+      //     facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+      //     twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+      //     insta_link: "https://www.instagram.com/melachild_blvck/",
+      //     facebook_link: "https://www.facebook.com/",
+      //     twitter_link: "",
+      //     router_link: "/photographer1",
+      //   },
+      //   {
+      //     img: "https://i.postimg.cc/KvG7YWZf/Screenshot-from-2022-03-26-13-57-45.png",
+      //     title: "Thuli P",
+      //     role: "Video editor",
+      //     insta_img:
+      //       "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+      //     facebook_img: "https://img.icons8.com/ios/30/000000/facebook-new.png",
+      //     twitter_img: "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+      //     insta_link: "https://www.instagram.com/thuliphongolo/",
+      //     facebook_link: "https://www.facebook.com/",
+      //     twitter_link: "",
+      //   },
+      // ],
     };
   },
   computed: {
@@ -160,7 +166,27 @@ export default {
       });
     },
   },
+  mounted() {
+    this.getPhotographers();
+  },
   methods: {
+    async getPhotographers() {
+      fetch("https://finproject-backend.herokuapp.com/photographers", {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: "Bearer " + localStorage.getItem("jwt"),
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log("JSON", json);
+          this.photographers = json;
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
     sortTitle(title) {
       this.filterPhotographers = this.filterPhotographers.sort((a, b) => {
         if (a.title.toLowerCase() < b.title.toLowerCase()) {
