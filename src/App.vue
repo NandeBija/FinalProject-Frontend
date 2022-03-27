@@ -1,7 +1,7 @@
 <template>
-  <Navbar />
+  <Navbar :key="key" />
 
-  <router-view />
+  <router-view @login="loggedIn" />
   <Footer />
 </template>
 <script>
@@ -12,6 +12,16 @@ export default {
   components: {
     Navbar,
     Footer,
+  },
+  data() {
+    return {
+      key: 0,
+    };
+  },
+  methods: {
+    loggedIn() {
+      this.key++;
+    },
   },
 };
 </script>

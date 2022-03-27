@@ -116,11 +116,12 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           if (json.jwt) {
+            console.log("JSON", json);
             localStorage.setItem("jwt", json.jwt);
             localStorage.setItem("user", JSON.stringify(json.user));
-            console.log(json.user)
-            
-            
+            localStorage.setItem("isAdmin", JSON.stringify(json.user.isAdmin));
+            // console.log(json.user)
+            this.$emit("login");
           }
           if (localStorage.getItem("jwt")) {
             this.$router.push({ name: "Home" });

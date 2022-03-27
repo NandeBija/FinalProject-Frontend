@@ -8,18 +8,11 @@
               ABOUT COMPANY
             </h5>
             <p>
-            Pricing
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
+              atque ea quis molestias. Fugiat pariatur maxime quis culpa
+              corporis vitae repudiandae aliquam voluptatem veniam, est atque
+              cumque eum delectus sint!
             </p>
-            <p>
-            Services
-            </p>
-            <p>
-            Where we operate
-            </p>
-            <p>
-            Our partners
-            </p>
-            
           </div>
           <div class="col-lg-3 col-md-6 mb-4">
             <h5 class="mb-3" style="letter-spacing: 2px; color: #818963">
