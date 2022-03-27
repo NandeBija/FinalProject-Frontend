@@ -47,18 +47,18 @@
             >
           </li>
         </ul>
-        <div class="d-flex align-items-center">
-          <button type="button" class="btn" v-if="isLoggedIn && user.isAdmin">
-            <router-link to="/login" >Create user</router-link>
-          </button>
+        <div class="d-flex align-items-left">
+          <!-- <button v-if="isLoggedIn" type="button" class="btn">
+            <router-link to="/login">Create user</router-link>
+          </button> -->
           <button type="button" class="btn">
-            <router-link to="/login">Login</router-link>
+            <router-link v-if="!isLoggedIn" to="/login">Login</router-link>
           </button>
 
-          <button type="button" class="btn" id="btn">
+          <button v-if="!isLoggedIn" type="button" class="btn" id="btn">
             <router-link to="/register">Sign up</router-link>
           </button>
-          <button @click="logout()" type="button" class="btn">
+          <button v-if="isLoggedIn" @click="logout()" type="button" class="btn">
             <router-link to="/">Logout</router-link>
           </button>
         </div>
@@ -69,11 +69,13 @@
 
 <script>
 export default {
-  data(){
-    return{
-      user:JSON.parse(localStorage.getItem('user'))
-    }
+  data() {
+    return {
+      user: JSON.parse(localStorage.getItem("user")),
+      isLoggedIn: false,
+    };
   },
+
   methods: {
     myFunction() {
       var x = document.getElementById("myTopnav");
@@ -88,12 +90,12 @@ export default {
       alert("User logged out");
     },
   },
-  mounted(){
-    console.log(this.user)
+  mounted() {
+    if (localStorage.getItem("jwt")) {
+      console.log(localStorage.getItem("jwt"));
+      this.isLoggedIn = true;
+    }
   },
-  
-    
- 
 };
 </script>
 

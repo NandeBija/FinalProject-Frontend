@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-12 mb-4">
-            <!-- <h5 class="mb-3" style="letter-spacing: 2px; color: #818963">
+            <h5 class="mb-3" style="letter-spacing: 2px; color: #818963">
               ABOUT COMPANY
             </h5>
             <p>
@@ -12,7 +12,7 @@
               atque ea quis molestias. Fugiat pariatur maxime quis culpa
               corporis vitae repudiandae aliquam voluptatem veniam, est atque
               cumque eum delectus sint!
-            </p> -->
+            </p>
           </div>
           <div class="col-lg-3 col-md-6 mb-4">
             <h5 class="mb-3" style="letter-spacing: 2px; color: #818963">
