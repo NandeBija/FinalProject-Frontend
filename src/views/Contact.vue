@@ -148,7 +148,7 @@ export default {
   },
   methods: {
     handleSubmit() {
-      fetch("herokulink/contact", {
+      fetch("https://finproject-backend.herokuapp.com/contact/", {
         method: "POST",
         body: JSON.stringify({
           name: this.name,
@@ -157,12 +157,13 @@ export default {
           message: this.message,
         }),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
+        'Accept': 'application/json'
         },
       })
         .then((response) => response.json())
-        .then((data) => (this.contact = data));
-      alert("Message has been sent successfully").catch((err) =>
+        .then((data) => {this.contact = data, alert("Message has been sent successfully")})
+      .catch((err) =>
         console.log(err.message)
       );
     },
