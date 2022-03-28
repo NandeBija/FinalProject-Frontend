@@ -12,9 +12,9 @@
                   alt="..."
                   width="130"
                   class="rounded mb-2 img-thumbnail"
-                /><router-link to="/updatePhotographers"><a href="#" class="btn btn-outline-dark btn-sm btn-block"
-                  >Edit profile</a
-                ></router-link>
+                /><a href="#" class="btn btn-outline-dark btn-sm btn-block"
+                  ><router-link to="/updatePhotographers">Edit profile</router-link></a
+                >
               </div>
               <div class="media-body mb-5 text-white">
                 <h4 class="mt-0 mb-0">{{ photographer.name }}</h4>

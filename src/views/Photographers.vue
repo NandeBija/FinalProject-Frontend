@@ -2,7 +2,7 @@
   <section>
     <div class="container" id="photographers">
       <h1>Meet our <span>Photographers</span></h1>
-      <div>
+      <!-- <div>
         <button
           type="submit"
           class="btn btn-warning btn-lg"
@@ -18,7 +18,7 @@
             View Photographers' latest work!
           </router-link>
         </button>
-      </div>
+      </div> -->
 
       <div class="row">
         <div
@@ -57,7 +57,7 @@
                   </a>
                 </li>
               </ul>
-              <button
+              <!-- <button
                 type="submit"
                 class="btn btn-warning btn-lg"
                 style="padding-bottom: 15px"
@@ -72,7 +72,7 @@
                   ></span>
                   Update photographer!
                 </router-link>
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
