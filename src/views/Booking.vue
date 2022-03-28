@@ -94,8 +94,9 @@
                                     type="name"
                                     placeholder="Enter photographer name"
                                     v-model="name"
+                                    required
                                   />
-                                  <span class="form-label">Name</span>
+                                  <span class="form-label">Photographer name</span>
                                 </div>
                               </div> 
                             </div>
@@ -136,6 +137,7 @@ export default {
       time: "",
       email: "",
       phone: "",
+      photographer_name: "",
       token:","
     };
   },
@@ -154,6 +156,7 @@ export default {
           time: this.time,
           email: this.email,
           phone: this.phone,
+          photographer_naem: this.photographer_name
         }),
         headers: {
           "Content-Type": "application/json",
