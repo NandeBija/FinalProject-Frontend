@@ -12,8 +12,13 @@
                   alt="..."
                   width="130"
                   class="rounded mb-2 img-thumbnail"
-                /><a href="#" class="btn btn-outline-dark btn-sm btn-block"
-                  ><router-link to="/updatePhotographers"
+                />
+                <a
+                  href="#"
+                  class="btn btn-outline-dark btn-sm btn-block"
+                  v-if="isAdmin"
+                  ><router-link
+                    :to="{ name: 'updatePhotographers', params: photographer }"
                     >Edit profile</router-link
                   ></a
                 >
@@ -123,11 +128,16 @@ export default {
   data() {
     return {
       photographer: {},
+      isAdmin: false,
     };
   },
 
   mounted() {
     this.photographer = this.$route.params;
+
+    if (localStorage.getItem("isAdmin") === "true") {
+      this.isAdmin = true;
+    }
   },
 };
 </script>

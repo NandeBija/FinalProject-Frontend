@@ -17,16 +17,27 @@
                           <div class="form-header">
                             <h1>Make your booking</h1>
                           </div>
-                          <form>
+                          <form @submit.prevent="handleSubmit">
                             <div class="form-group">
                               <input
                                 class="form-control"
                                 type="text"
                                 placeholder="Country, ZIP, city..."
-                                v-model="location"
+                                v-model="city"
                               />
-                              <span class="form-label">Location</span>
+                              <span class="form-label">City</span>
                             </div>
+                             <div class="col-md-6">
+                                <div class="form-group">
+                                  <input
+                                    class="form-control"
+                                    type="name"
+                                    placeholder="Enter your Username"
+                                    v-model="username"
+                                  />
+                                  <span class="form-label">Username</span>
+                                </div>
+                              </div>
                             <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
@@ -37,6 +48,17 @@
                                     v-model="date"
                                   />
                                   <span class="form-label">Date</span>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input
+                                    class="form-control"
+                                    type="time"
+                                    required
+                                    v-model="time"
+                                  />
+                                  <span class="form-label">Time</span>
                                 </div>
                               </div>
                             </div>
@@ -65,7 +87,7 @@
                                   <span class="form-label">Phone</span>
                                 </div>
                               </div>
-                              <div class="col-md-6">
+                               <div class="col-md-6">
                                 <div class="form-group">
                                   <input
                                     class="form-control"
@@ -75,7 +97,7 @@
                                   />
                                   <span class="form-label">Name</span>
                                 </div>
-                              </div>
+                              </div> 
                             </div>
                             <div class="form-btn">
                               <button class="submit-btn">Book Now</button>
@@ -105,7 +127,49 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      username:"",
+      city: "",
+      date: "",
+      time: "",
+      email: "",
+      phone: "",
+      token:","
+    };
+  },
+  mounted() {
+    // this.photographer = this.$route.params;
+    this.token = localStorage.getItem("jwt");
+  },
+  methods: {
+    handleSubmit() {
+      fetch("https://finproject-backend.herokuapp.com/booking", {
+        method: "POST",
+        body: JSON.stringify({
+          username: this.username,
+          city: this.city,
+          date: this.date,
+          time: this.time,
+          email: this.email,
+          phone: this.phone,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer " + this.token,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          (this.contact = data), alert("Booking made!");
+        })
+        .catch((err) => console.log(err.message));
+    },
+  },
+
+};
 </script>
 
 <style scoped>

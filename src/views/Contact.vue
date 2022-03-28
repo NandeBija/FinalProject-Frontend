@@ -147,7 +147,7 @@ export default {
   },
   methods: {
     handleSubmit() {
-      fetch("https://finproject-backend.herokuapp.com/contact/", {
+      fetch("https://finproject-backend.herokuapp.com/contact", {
         method: "POST",
         body: JSON.stringify({
           name: this.name,

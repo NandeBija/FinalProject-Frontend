@@ -7,14 +7,14 @@
             <div class="row g-0">
               <div class="col-lg-6">
                 <div class="card-body p-md-5 mx-md-4">
-                  <form @submit.prevent="edit">                   
+                  <form @submit.prevent="edit">
                     <div class="form-outline mb-4">
                       <input
                         type="name"
                         id="form2Example11"
                         class="form-control"
                         placeholder="Enter email"
-                        v-model="name"
+                        v-model="photographer.name"
                       />
                       <label class="form-label" for="form2Example11"
                         >Name</label
@@ -23,11 +23,11 @@
 
                     <div class="form-outline mb-4">
                       <input
-                        type="password"
+                        type="name"
                         id="form2Example22"
                         class="form-control"
-                        placeholder="Enter password"
-                        v-model="city"
+                        placeholder="Enter City"
+                        v-model="photographer.city"
                       />
                       <label class="form-label" for="form2Example22"
                         >City</label
@@ -35,11 +35,11 @@
                     </div>
                     <div class="form-outline mb-4">
                       <input
-                        type="password"
+                        type="name"
                         id="form2Example22"
                         class="form-control"
-                        placeholder="Enter password"
-                        v-model="project_number"
+                        placeholder="Enter Project Numbers"
+                        v-model="photographer.project_number"
                       />
                       <label class="form-label" for="form2Example22"
                         >Project_number</label
@@ -47,41 +47,43 @@
                     </div>
                     <div class="form-outline mb-4">
                       <input
-                        type="password"
+                        type="name"
                         id="form2Example22"
                         class="form-control"
-                        placeholder="Enter password"
-                        v-model="following_number"
+                        placeholder="Enter Follow Number"
+                        v-model="photographer.following_number"
                       />
                       <label class="form-label" for="form2Example22"
                         >Following_number</label
                       >
                     </div>
-                     <div class="form-outline mb-4">
+                    <div class="form-outline mb-4">
                       <input
-                        type="password"
+                        type="name"
                         id="form2Example22"
                         class="form-control"
-                        placeholder="Enter password"
-                        v-model="follower_number"
+                        placeholder="Enter Follower Number"
+                        v-model="photographer.follower_number"
                       />
                       <label class="form-label" for="form2Example22"
                         >Follower_number</label
                       >
                     </div>
 
-                    <div class="text-center pt-1 mb-5 pb-1"><router-link to="/updatePhotographers">
-                      <button
-                        class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                        type="submit"
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <router-link to="/updatePhotographers">
+                        <button
+                          @click="edit(photographer._id)"
+                          class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                          type="submit"
+                        >
+                          update
+                        </button></router-link
                       >
-                       update
-                      </button></router-link>
                     </div>
                   </form>
                 </div>
               </div>
-             
             </div>
           </div>
         </div>
@@ -98,23 +100,29 @@ export default {
       city: "",
       project_number: "",
       following_number: "",
-      follower_number: ""
+      follower_number: "",
+      photographer: {},
+      token: "",
     };
   },
+  mounted() {
+    this.photographer = this.$route.params;
+    this.token = localStorage.getItem("jwt");
+  },
   methods: {
-    edit() {
-      fetch("https://finproject-backend.herokuapp.com/photographers", {
+    edit(id) {
+      fetch("https://finproject-backend.herokuapp.com/photographers/" + id, {
         method: "PUT",
         body: JSON.stringify({
-          name: this.name,
-          city: this.city,
-          project_number: this.project_number,
-           following_number: this.following_number,
-            follower_number: this.follower_number,
-
+          name: this.photographer.name,
+          city: this.photographer.city,
+          project_number: this.photographer.project_number,
+          following_number: this.photographer.following_number,
+          follower_number: this.photographer.follower_number,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
+          Authorization: "Bearer " + this.token,
         },
       })
         .then((response) => response.json())
@@ -155,6 +163,9 @@ export default {
 }
 .btn:nth-child(4) {
   color: grey;
+}
+form {
+  padding-top: 100px;
 }
 
 @media (min-width: 768px) {
