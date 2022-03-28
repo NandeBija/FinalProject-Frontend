@@ -13,7 +13,9 @@
                   width="130"
                   class="rounded mb-2 img-thumbnail"
                 /><a href="#" class="btn btn-outline-dark btn-sm btn-block"
-                  ><router-link to="/updatePhotographers">Edit profile</router-link></a
+                  ><router-link to="/updatePhotographers"
+                    >Edit profile</router-link
+                  ></a
                 >
               </div>
               <div class="media-body mb-5 text-white">
@@ -61,7 +63,7 @@
               </button>
             </div>
           </div>
-          <div class="py-4 px-4">
+          <!-- <div class="py-4 px-4">
             <div class="d-flex align-items-center justify-content-between mb-3">
               <h5 class="mb-0">Recent projects</h5>
             </div>
@@ -70,8 +72,8 @@
               v-for="project of photographer.projects"
               :key="project.name"
             >
-              <p>{{ project }}</p>
-              <!-- <div class="col-lg-6 mb-2 pr-lg-1">
+              <p>{{ project }}</p> -->
+          <!-- <div class="col-lg-6 mb-2 pr-lg-1">
                 <img
                   :src="project.img"
                   alt=""
@@ -87,7 +89,7 @@
                   />
                 </div>
               </div> -->
-              <!-- <div class="col-lg-6 mb-2 pl-lg-1">
+          <!-- <div class="col-lg-6 mb-2 pl-lg-1">
                 <img
                   :src="photographer.proj_2"
                   alt=""
@@ -108,8 +110,8 @@
                   class="img-fluid rounded shadow-sm"
                 />
               </div> -->
-            </div>
-          </div>
+          <!-- </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -139,6 +141,9 @@ export default {
 }
 .profile-head {
   transform: translateY(5rem);
+}
+a {
+  color: white;
 }
 
 button {

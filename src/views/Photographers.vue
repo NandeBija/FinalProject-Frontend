@@ -2,23 +2,23 @@
   <section>
     <div class="container" id="photographers">
       <h1>Meet our <span>Photographers</span></h1>
-      <!-- <div>
+      <div>
         <button
           type="submit"
           class="btn btn-warning btn-lg"
           style="padding-bottom: 15px"
         >
-          <router-link :to="{ name: 'Photographer1', params: { userId: 123 } }">
+          <router-link :to="{ name: 'updatePhotographers', params: { userId: 123 } }">
             <span
               v-if="loading"
               class="spinner-border spinner-border-sm"
               role="status"
               aria-hidden="true"
             ></span>
-            View Photographers' latest work!
+           Add photographer
           </router-link>
         </button>
-      </div> -->
+      </div> 
 
       <div class="row">
         <div
