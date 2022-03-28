@@ -8,10 +8,13 @@
               ABOUT COMPANY
             </h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-              atque ea quis molestias. Fugiat pariatur maxime quis culpa
-              corporis vitae repudiandae aliquam voluptatem veniam, est atque
-              cumque eum delectus sint!
+              Rates
+            </p>
+            <p>
+              Services
+            </p>
+            <p>
+              Photographers
             </p>
           </div>
           <div class="col-lg-3 col-md-6 mb-4">

@@ -11,6 +11,7 @@ import Photographer2 from "../views/Photographer2";
 import Booking from "../views/Booking";
 import Checkout from "../views/Checkout";
 import Admin from "../views/Admin";
+import updatePhotographers from "../views/UpdatePhotographer";
 
 
 const routes = [
@@ -42,6 +43,11 @@ const routes = [
     path: "/photographers",
     name: "Photographers",
     component: Photographers,
+  },
+  {
+    path: "/updatePhotographers",
+    name: "updatePhotographers",
+    component: updatePhotographers,
   },
   {
     path: "/register",

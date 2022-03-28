@@ -4,9 +4,8 @@
       <h3 class="font-weight-bold text-center mb-4">Contact Us</h3>
 
       <p class="text-center w-responsive mx-auto pb-5">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-        amet numquam iure provident voluptate esse quasi, veritatis totam
-        voluptas nostrum quisquam eum porro a pariatur veniam.
+        Have an event you want us to be a part of? Or is your photographersimply not good enough?<br>
+         Get in touch with us using the form below.
       </p>
 
       <!-- Grid row -->
