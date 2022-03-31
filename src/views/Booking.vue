@@ -27,17 +27,17 @@
                               />
                               <span class="form-label">City</span>
                             </div>
-                             <div class="col-md-6">
-                                <div class="form-group">
-                                  <input
-                                    class="form-control"
-                                    type="name"
-                                    placeholder="Enter your Username"
-                                    v-model="username"
-                                  />
-                                  <span class="form-label">Username</span>
-                                </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input
+                                  class="form-control"
+                                  type="name"
+                                  placeholder="Enter your Username"
+                                  v-model="username"
+                                />
+                                <span class="form-label">Username</span>
                               </div>
+                            </div>
                             <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
@@ -87,7 +87,7 @@
                                   <span class="form-label">Phone</span>
                                 </div>
                               </div>
-                               <div class="col-md-6">
+                              <div class="col-md-6">
                                 <div class="form-group">
                                   <input
                                     class="form-control"
@@ -96,9 +96,11 @@
                                     v-model="name"
                                     required
                                   />
-                                  <span class="form-label">Photographer name</span>
+                                  <span class="form-label"
+                                    >Photographer name</span
+                                  >
                                 </div>
-                              </div> 
+                              </div>
                             </div>
                             <div class="form-btn">
                               <button class="submit-btn">Book Now</button>
@@ -131,14 +133,14 @@
 export default {
   data() {
     return {
-      username:"",
+      username: "",
       city: "",
       date: "",
       time: "",
       email: "",
       phone: "",
       photographer_name: "",
-      token:","
+      token: ",",
     };
   },
   mounted() {
@@ -156,7 +158,7 @@ export default {
           time: this.time,
           email: this.email,
           phone: this.phone,
-          photographer_naem: this.photographer_name
+          photographer_naem: this.photographer_name,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -171,7 +173,6 @@ export default {
         .catch((err) => console.log(err.message));
     },
   },
-
 };
 </script>
 
@@ -184,6 +185,7 @@ body {
 .section {
   position: relative;
   padding-top: 550px;
+  padding-bottom: 100px;
 }
 .justify-content-center {
   padding-top: 45px;
@@ -371,5 +373,18 @@ span {
 .booking-form .submit-btn:hover,
 .booking-form .submit-btn:focus {
   opacity: 0.9;
+}
+
+@media (max-width: 750px) {
+  .card-body {
+    padding-bottom: 180px;
+    padding-top: 50px;
+  }
+  .img-fluid {
+    display: none;
+  }
+  div p {
+    padding-bottom: 100px;
+  }
 }
 </style>

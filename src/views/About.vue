@@ -56,6 +56,10 @@ export default {};
 p:nth-child(1){
   font-size:8rem;
 }
+
+.col:nth-child(2) p {
+  font-size: 1.5rem;
+}
 .curved h1 {
   font-size: 4rem;
   margin-top: 0;

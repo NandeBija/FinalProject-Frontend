@@ -4,8 +4,9 @@
       <h3 class="font-weight-bold text-center mb-4">Contact Us</h3>
 
       <p class="text-center w-responsive mx-auto pb-5">
-        Have an event you want us to be a part of? Or is your photographersimply not good enough?<br>
-         Get in touch with us using the form below.
+        Have an event you want us to be a part of? Or is your photographersimply
+        not good enough?<br />
+        Get in touch with us using the form below.
       </p>
 
       <!-- Grid row -->
@@ -156,15 +157,16 @@ export default {
           message: this.message,
         }),
         headers: {
-          'Content-Type': 'application/json',
-        'Accept': 'application/json'
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "http://localhost:2088",
+          Accept: "application/json",
         },
       })
         .then((response) => response.json())
-        .then((data) => {this.contact = data, alert("Message has been sent successfully")})
-      .catch((err) =>
-        console.log(err.message)
-      );
+        .then((data) => {
+          (this.contact = data), alert("Message has been sent successfully");
+        })
+        .catch((err) => console.log(err.message));
     },
   },
 };
@@ -176,6 +178,10 @@ export default {
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
+}
+.btn {
+  background: #dc3545;
+  border: #dc3545;
 }
 .map-container-section iframe {
   left: 0;

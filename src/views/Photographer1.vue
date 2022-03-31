@@ -22,6 +22,15 @@
                     >Edit profile</router-link
                   ></a
                 >
+                <a
+                  href="#"
+                  class="btn btn-outline-dark btn-sm btn-block"
+                  v-if="isAdmin"
+                  ><router-link
+                    :to="{ name: 'updatePhotographers', params: photographer }"
+                    >Delete profile</router-link
+                  ></a
+                >
               </div>
               <div class="media-body mb-5 text-white">
                 <h4 class="mt-0 mb-0">{{ photographer.name }}</h4>
@@ -68,55 +77,6 @@
               </button>
             </div>
           </div>
-          <!-- <div class="py-4 px-4">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <h5 class="mb-0">Recent projects</h5>
-            </div>
-            <div
-              class="row"
-              v-for="project of photographer.projects"
-              :key="project.name"
-            >
-              <p>{{ project }}</p> -->
-          <!-- <div class="col-lg-6 mb-2 pr-lg-1">
-                <img
-                  :src="project.img"
-                  alt=""
-                  class="img-fluid rounded shadow-sm"
-                />
-              </div>s
-              <div>
-                <div class="col-lg-6 mb-2 pl-lg-1">
-                  <img
-                    :src="project.img"
-                    alt=""
-                    class="img-fluid rounded shadow-sm"
-                  />
-                </div>
-              </div> -->
-          <!-- <div class="col-lg-6 mb-2 pl-lg-1">
-                <img
-                  :src="photographer.proj_2"
-                  alt=""
-                  class="img-fluid rounded shadow-sm"
-                />
-              </div>
-              <div class="col-lg-6 pr-lg-1 mb-2">
-                <img
-                  :src="photographer.proj_3"
-                  alt=""
-                  class="img-fluid rounded shadow-sm"
-                />
-              </div>
-              <div class="col-lg-6 pl-lg-1">
-                <img
-                  :src="photographer.proj_4"
-                  alt=""
-                  class="img-fluid rounded shadow-sm"
-                />
-              </div> -->
-          <!-- </div>
-          </div> -->
         </div>
       </div>
     </div>

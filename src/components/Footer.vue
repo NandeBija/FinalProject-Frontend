@@ -7,15 +7,9 @@
             <h5 class="mb-3" style="letter-spacing: 2px; color: #818963">
               ABOUT COMPANY
             </h5>
-            <p>
-              Rates
-            </p>
-            <p>
-              Services
-            </p>
-            <p>
-              Photographers
-            </p>
+
+            <p>Services</p>
+            <p>Photographers</p>
           </div>
           <div class="col-lg-3 col-md-6 mb-4">
             <h5 class="mb-3" style="letter-spacing: 2px; color: #818963">
@@ -66,4 +60,5 @@ footer {
   background-color: white;
   padding-top: 10px;
 }
+
 </style>

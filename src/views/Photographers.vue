@@ -4,21 +4,24 @@
       <h1>Meet our <span>Photographers</span></h1>
       <div>
         <button
+          
           type="submit"
-          class="btn btn-warning btn-lg"
+          class="btn btn-lg"
           style="padding-bottom: 15px"
         >
-          <router-link :to="{ name: 'updatePhotographers', params: { userId: 123 } }">
+          <router-link
+            :to="{ name: 'updatePhotographers', params: { userId: 123 } }"
+          >
             <span
               v-if="loading"
               class="spinner-border spinner-border-sm"
               role="status"
               aria-hidden="true"
             ></span>
-           Add photographer
+            Add photographer
           </router-link>
         </button>
-      </div> 
+      </div>
 
       <div class="row">
         <div
@@ -57,22 +60,6 @@
                   </a>
                 </li>
               </ul>
-              <!-- <button
-                type="submit"
-                class="btn btn-warning btn-lg"
-                style="padding-bottom: 15px"
-              >
-                <router-link to="/photographer1">
-                  <span
-                    v-if="loading"
-                    class="spinner-border spinner-border-sm"
-                    role="status"
-                    aria-hidden="true"
-                    @click="update()"
-                  ></span>
-                  Update photographer!
-                </router-link>
-              </button> -->
             </div>
           </div>
         </div>
@@ -103,7 +90,7 @@ export default {
       //     insta_link: "https://www.instagram.com/melachild_blvck/",
       //     facebook_link: "https://www.facebook.com/",
       //     twitter_link: "",
-      //     router_link: "/photographer1",
+      //
       //   },
       //   {
       //     img: "https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png",
@@ -234,6 +221,14 @@ export default {
   display: flex;
   justify-content: center;
   padding-top: 34px;
+}
+.btn {
+  background-color: #dc3545;
+  width: 220px;
+  height: 50px;
+  justify-content: center;
+  text-align: center;
+  border-radius: 45px;
 }
 
 section {
